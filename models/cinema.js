@@ -7,10 +7,19 @@ Cinema.prototype.getTitlesList = function (films) {
     return film.title;
   });
   return titles;
-}
+};
 
-// Park.prototype.removeDinosaur = function (dinosaur) {
-//   this.dinosaurCollection.pop(dinosaur);
-// };
+//find a film by title
+Cinema.prototype.findByTitle = function (title) {
+  const newFilm = this.films.find(film => film.title == title);
+  console.log("string", newFilm);
+  return newFilm;
+};
+
+// filter films by genre
+Cinema.prototype.filterByGenre = function (genre) {
+  const listOfMovies = this.films.filter(film => film.genre == genre);
+  return listOfMovies;
+}
 
 module.exports = Cinema;
